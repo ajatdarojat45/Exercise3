@@ -1,0 +1,18 @@
+body{
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 1%;
+}
+
+.footer1 {
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.footer2 {
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: -3px;
+    font-size: 15px;
+}
