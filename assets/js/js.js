@@ -1,6 +1,5 @@
 var planets = [];
 
-
 fetch('../../../../latihan/Exercise3/assets/data/planets.json')
 .then(function(response) {
   return response.json();
@@ -8,31 +7,49 @@ fetch('../../../../latihan/Exercise3/assets/data/planets.json')
 .then(function(json) {
   var data = JSON.stringify(json);
   planets = JSON.parse(data);
-  planet = planets.map(f_showData);
-  document.getElementById('tBody').innerHTML = planet;
+  f_showData(planets)
 })
 
-function ajat(){
+function f_filter(){
   var q = document.getElementById('filter').value;
   data = planets.filter(function (planet) {
     return planet.name.includes(q) || planet.rotation_period.includes(q) || planet.orbital_period.includes(q) || planet.diameter.includes(q) || planet.climate.includes(q) || planet.gravity.includes(q) || planet.terrain.includes(q) || planet.surface_water.includes(q) || planet.population.includes(q)
   }); 
-  
-  planet = data.map(f_showData);
-  document.getElementById('tBody').innerHTML = planet;
+  f_showData(data)
 }
 
-function f_showData(value, index) {
-  return "<tr><td>"+(index+1)+
-          "</td><td>"+value.name+
-          "</td><td>"+value.rotation_period+
-          "</td><td>"+value.orbital_period+
-          "</td><td>"+value.diameter+
-          "</td><td>"+value.climate+
-          "</td><td>"+value.gravity+
-          "</td><td>"+value.terrain+
-          "</td><td>"+value.surface_water+
-          "</td><td>"+value.population+
-          "</td></tr>";
-  
+function f_showData(planets) {  
+    var tr, td;
+    var tbody = document.getElementById("tBody");
+    tbody.innerHTML = '';
+    // loop through data source
+    for (var i = 0; i < planets.length; i++) {
+        tr = tbody.insertRow(tbody.rows.length);
+        td = tr.insertCell(tr.cells.length);
+        td.setAttribute("align", "center");
+        td.innerHTML = i+1;
+        td = tr.insertCell(tr.cells.length);
+        td.innerHTML = planets[i].name;
+        td = tr.insertCell(tr.cells.length);
+        td.setAttribute("align", "center");
+        td.innerHTML = planets[i].rotation_period;
+        td = tr.insertCell(tr.cells.length);
+        td.setAttribute("align", "center");
+        td.innerHTML = planets[i].orbital_period;
+        td = tr.insertCell(tr.cells.length);
+        td.setAttribute("align", "center");
+        td.innerHTML = planets[i].diameter;
+        td = tr.insertCell(tr.cells.length);
+        td.innerHTML = planets[i].climate;
+        td = tr.insertCell(tr.cells.length);
+        td.innerHTML = planets[i].gravity;
+        td = tr.insertCell(tr.cells.length);
+        td.innerHTML = planets[i].terrain;
+        td = tr.insertCell(tr.cells.length);
+        td.setAttribute("align", "center");
+        td.innerHTML = planets[i].surface_water;
+        td = tr.insertCell(tr.cells.length);
+        td.setAttribute("align", "right");
+        td.innerHTML = planets[i].population;
+    }
 }
