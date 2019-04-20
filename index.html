@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Table</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <center>
+        <h1>Planet List</h1>
+      </center>
+    </div>
+    <div class="row">
+      <div class="col-md-7">
+      </div>
+      <div class="col-md-5">
+        <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="">Filter</span>
+            </div>
+            <input type="text" class="form-control" oninput="ajat()" placeholder="Filter" id="filter">
+          </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+          <div class="table-responsive">
+              <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Rotation Period</th>
+                      <th scope="col">Orbital Periode</th>
+                      <th scope="col">Diameter</th>
+                      <th scope="col">Climate</th>
+                      <th scope="col">Gravity</th>
+                      <th scope="col">Terrain</th>
+                      <th scope="col">Surface Water</th>
+                      <th scope="col">Population</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tBody"></tbody>
+                </table>
+          </div>
+        </div>
+    </div>
+  </div>
+  <script src="assets/js/js.js"></script>
+</body>
+</html>
