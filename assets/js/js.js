@@ -12,7 +12,7 @@ fetch('https://swapi.co/api/planets/')
 function f_filter(){
   var q = document.getElementById('filter').value;
   data = planets.filter(function (planet) {
-    return planet.name.includes(q) || planet.rotation_period.includes(q) || planet.orbital_period.includes(q) || planet.diameter.includes(q) || planet.climate.includes(q) || planet.gravity.includes(q) || planet.terrain.includes(q) || planet.surface_water.includes(q) || planet.population.includes(q)
+    return planet.name.toLowerCase().includes(q) || planet.rotation_period.includes(q) || planet.orbital_period.includes(q) || planet.diameter.includes(q) || planet.climate.includes(q) || planet.gravity.includes(q) || planet.terrain.includes(q) || planet.surface_water.includes(q) || planet.population.includes(q)
   }); 
   f_showData(data)
 }
