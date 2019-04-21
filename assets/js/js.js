@@ -1,12 +1,11 @@
 var planets = [];
 
-fetch('../../../../latihan/Exercise3/assets/data/planets.json')
+fetch('https://swapi.co/api/planets/')
 .then(function(response) {
   return response.json();
 })
-.then(function(json) {
-  var data = JSON.stringify(json);
-  planets = JSON.parse(data);
+.then(function(json) {  
+  planets = json.results
   f_showData(planets)
 })
 
